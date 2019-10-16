@@ -28,8 +28,8 @@ const usersRouter = require('./routes/users');
 
 // Set "Access-Control-Allow-Origin" header
 
-app.use('/exercises',  exercisesRouter);
-app.use('/users', usersRouter);
+app.use('exercises',  exercisesRouter);
+app.use('users', usersRouter);
 
 
     app.use(
