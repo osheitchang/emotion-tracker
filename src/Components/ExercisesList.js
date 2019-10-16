@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import serverUrl from '../configServer'
-
+console.log(serverUrl, process.env)
 class ExercisesList extends Component {
 
     constructor(props) {

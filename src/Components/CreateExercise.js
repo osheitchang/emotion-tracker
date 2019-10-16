@@ -83,7 +83,7 @@ class CreateExercise extends Component {
             users:this.state.users
         }
 
-        axios.post('http://localhost:5000/exercises/add', exercise)
+        axios.post(`${serverUrl}/exercises/add`, exercise)
         .then(res=> console.log(res.data))
 
         console.log(exercise)
