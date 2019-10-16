@@ -11,9 +11,11 @@ const userSchema = new Schema({
         trim: true,
         minlength: 3
     },
-    id:{type:String,  required:true}
 }, {
-    timestamps: true,
+    timestamps: {
+        createdAt: 'created_at',
+        updatedAt: 'updated_it'
+    }
 });
 
 const User = mongoose.model('User', userSchema )
