@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import serverUrl from '../configServer'
 
 class ExercisesList extends Component {
 
@@ -13,7 +14,7 @@ class ExercisesList extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:5000/exercises/')
+        axios.get(`${serverUrl}/exercises/`, {withCredentials: true})
         .then(response=>{
             this.setState({exercises: response.data})
         })
@@ -22,7 +23,7 @@ class ExercisesList extends Component {
 
 
     deleteExercise(id) {
-        axios.delete('http://localhost:5000/exercises/'+ id)
+        axios.delete(`${serverUrl}/exercises/+ id`)
         .then(res=> console.log(res.data));
         this.setState({
             exercises: this.state.exercises.filter(el => el._id !== id)
@@ -30,6 +31,7 @@ class ExercisesList extends Component {
     }
     
     render() {
+        console.log('This is the service URL>>>>',serverUrl)
         return (
             <div>
                 <p>This is the exercise list component</p>

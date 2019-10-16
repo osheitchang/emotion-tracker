@@ -3,6 +3,7 @@ let Exercise = require('../models/Exercise');
 
 
 router.get('/', (req,res,next)=>{
+    console.log("EXERCISES FOUND")
     Exercise.find()
     .then(exercises=> res.json(exercises))
     .catch(err => err.status(400).json('Error: ' + err));

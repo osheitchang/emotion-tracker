@@ -25,7 +25,7 @@ class CreateExercise extends Component {
         users: []
     }
 
-    
+    // ${serverUrl}
 }
         componentDidMount() {
             axios.get(`${serverUrl}/users`)
