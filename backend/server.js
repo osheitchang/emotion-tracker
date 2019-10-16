@@ -27,3 +27,14 @@ app.use('/users', usersRouter);
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
+
+// Set "Access-Control-Allow-Origin" header
+app.use(
+  cors({
+    origin: (origin, cb) => {
+      cb(null, true)
+    },
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+)

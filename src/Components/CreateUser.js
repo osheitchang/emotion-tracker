@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import serverUrl from '../configServer'
 
 class CreateUser extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class CreateUser extends Component {
       username: this.state.username
     };
 
-    axios.post('http://localhost:5000/users/add', user)
+    axios.post(`${serverUrl}/users/add`, user)
     .then(res=> console.log(res.data))
     // .catch(err=> console.log(err))
 
