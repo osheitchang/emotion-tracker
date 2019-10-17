@@ -19,31 +19,33 @@ connection.once('open', () => {
   console.log("Mongoose database connection succesfully");
 });
 
-app.use(express.static(path.join(__dirname, '../build')))
+app.use(express.static(path.join(__dirname, '../frontend/build')))
 
 
+// MAKE SURE THIS IS ABOVE YOUR CORS CONFIG
 
 const exercisesRouter = require('./routes/excercises');
 const usersRouter = require('./routes/users');
 
 // Set "Access-Control-Allow-Origin" header
 
-app.use('exercises',  exercisesRouter);
-app.use('users', usersRouter);
+//MAKE SURE THE ROUTES ARE ABOVE THIS TO AVOID CORS ERROR
 
-
-    app.use(
-      cors({
-        origin: (origin, cb) => {
-          cb(null, true)
-        },
-        optionsSuccessStatus: 200,
-        credentials: true,
-      })
-    )
+app.use(
+  cors({
+    origin: (origin, cb) => {
+      cb(null, true)
+    },
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+  )
+  
+  app.use('/exercises',  exercisesRouter);
+  app.use('/users', usersRouter);
 
 app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../build/index.html'))
+    res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 })
 
 app.listen(port, () => {

@@ -28,8 +28,13 @@ class CreateExercise extends Component {
     // ${serverUrl}
 }
         componentDidMount() {
+            console.log(this.state.users)
+
+            console.log(`${serverUrl}/users`)
             axios.get(`${serverUrl}/users`)
-            .then(response=>{
+            .then((response)=>{
+                console.log("Hello")
+                console.log(response)
                 if(response.data.length > 0){
                     this.setState({
                         users: response.data.map(user=>user.username),
@@ -38,6 +43,8 @@ class CreateExercise extends Component {
                     console.log("this is the response>>>>>",response.date)
                 }
             })
+            console.log(this.state.users)
+
         }
             // this.state.users =  response.username)
             // console.log(users))
