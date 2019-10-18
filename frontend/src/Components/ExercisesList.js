@@ -75,7 +75,7 @@ class ExercisesList extends Component {
   }
 
   exercisesList=()=>{
-      console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=',this.state)
+      console.log(' -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= ',this.state)
     return this.state.exercises.map(currentExercise => {
       return (
         <Exercise
@@ -102,9 +102,9 @@ class ExercisesList extends Component {
               <th>Action</th>
             </tr>
           </thead>
-          {/* <tbody>{this.exercisesList}</tbody> */}
+          <tbody>{this.exercisesList()}</tbody>
         </table>
-        {this.exercisesList()}
+        {/* {this.exercisesList()} */}
       </div>
     );
   }
