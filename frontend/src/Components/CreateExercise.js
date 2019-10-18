@@ -102,7 +102,7 @@ class CreateExercise extends Component {
         console.log(this.state.username)
         return (
             <div>
-                <h3>Create New Exercise Log</h3>
+                <h3>Create New Emotions Log</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className= "form-group">
                         <label> Username:</label>

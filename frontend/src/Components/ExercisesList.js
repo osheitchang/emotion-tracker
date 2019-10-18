@@ -92,7 +92,7 @@ class ExercisesList extends Component {
     console.log("This is the service URL>>>>", serverUrl);
     return (
       <div>
-        <h3>Logged Exercises</h3>
+        <h3>Logged Emotions</h3>
         <table className="table">
           <thead className="thead-light">
             <tr>
