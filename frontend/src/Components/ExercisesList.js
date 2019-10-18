@@ -67,10 +67,11 @@ class ExercisesList extends Component {
       .delete(`${serverUrl}/exercises/+ id`)
       .then(res => {
           console.log(res.data)
+          console.log("this is the id",id)
 
-        //   this.setState({
-        //     exercises: this.state.exercises.filter(el = el._id !== id)
-        //   });
+          this.setState({
+            exercises: this.state.exercises.filter(el => el._id !== id)
+          });
         });
   }
 
@@ -97,7 +98,7 @@ class ExercisesList extends Component {
             <tr>
               <th>Username</th>
               <th>Description</th>
-              <th>Duration</th>
+              <th>Intensity(1-10)</th>
               <th>Date</th>
               <th>Action</th>
             </tr>
