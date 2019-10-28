@@ -1,6 +1,9 @@
 const router = require('express').Router();
 let Exercise = require('../models/Exercise');
 
+//I need to chnage all the models from exercises to emotions
+
+
 
 router.get('/', (req,res,next)=>{
     console.log("EXERCISES FOUND")
@@ -28,6 +31,13 @@ router.post('/add',(req,res,next)=>{
     .catch(err => res.status(400).json('Error: ' + err));
     
 });
+
+
+router.get('/intesity',(req,res,next)=>{
+    Exercise.find()
+    .then(emotion => res.json(emotion.intensity))
+    .catch(err=> res.status(400).json('Error: ' + err))
+})
 
 router.get('/:id',(req,res,next)=>{
     console.log('this is req', req)
