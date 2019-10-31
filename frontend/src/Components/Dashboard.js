@@ -1,9 +1,25 @@
 import React, { Component } from "react";
-import serverUrl from '../configServer.js'
+import serverUrl from '../configServer.js';
+import axios from 'axios';
 
 
 class Dashboard extends Component {
+
+   state = {
+
+  }
+
+  
+  
+  
+  
   render() {
+    
+      axios.get('/intensity', response)
+      .then(response =>{
+        console.log("This is the >>>", response)
+      })
+    
     return (
       <div>
       <h2>Emotions</h2>
