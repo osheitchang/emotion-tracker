@@ -6,6 +6,8 @@ import axios from 'axios';
 class Dashboard extends Component {
 
    state = {
+     intesity:3,
+     emotion:[],
 
   }
 
@@ -19,6 +21,7 @@ class Dashboard extends Component {
       .then(response =>{
         console.log("This is the >>>", response)
       })
+      .catch(err => console.log(err))
     
     return (
       <div>
