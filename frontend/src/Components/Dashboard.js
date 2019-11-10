@@ -17,11 +17,11 @@ class Dashboard extends Component {
   
   render() {
     
-      axios.get('/intensity', response)
-      .then(response =>{
-        console.log("This is the >>>", response)
-      })
-      .catch(err => console.log(err))
+      // axios.get('/intensity', response)
+      // .then(response =>{
+      //   console.log("This is the >>>", response)
+      // })
+      // .catch(err => console.log(err))
     
     return (
       <div>
