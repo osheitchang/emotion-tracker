@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import serverUrl from '../configServer.js';
 import axios from 'axios';
+import serverUrl from '../configServer.js'
 
 
 class Dashboard extends Component {
